@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: #f7f9fc;
+    }
+
+    .navbar {
+        background-color: #34495e;
+        color: white;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .navbar h1 {
+        margin: 0;
+    }
+
+    .banner {
+        background-image: url('https://example.com/football-field.jpg'); /* Replace with a real image URL */
+        background-size: cover;
+        background-position: center;
+        height: 300px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .banner h2 {
+        font-size: 48px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .card h3 {
+        margin-top: 15px;
+        font-size: 24px;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #34495e;
+        color: white;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+    .content {
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    .card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        padding: 20px;
+        transition: transform 0.2s;
+    }
+    .card img {
+        max-width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+    .card h3 {
+        margin: 10px 0;
+        font-size: 1.2em;
+    }
+    .card p {
+        font-size: 0.9em;
+        color: #555;
+    }
+    .card:hover {
+        transform: translateY(-10px);
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class=" row justify-content-center">
+        <div class="col-sm-8">
+            <h2>user dashboard</h2>
+            <p><b>Name: </b> {{user.name }}</p>
+            <p><b>Email: </b> {{user.email }}</p>
+            <a href="/logout" class="btn btn-dark">Logout</a>
+        </div>
+
+    </div>
+
+    <div class="navbar">
+        <h1>Football Fan Page</h1>
+    </div>
+
+    <div class="banner">
+        <h2>Welcome to the World of Football</h2>
+    </div>
+
+    <div class="content">
+        <h2>Top Football Players</h2>
+        <div class="grid-container">
+            <div class="card">
+                <img src="https://i0.wp.com/www.hairstyle.org.in/wp-content/uploads/2017/04/Hairstyles-By-Cristiano-Ronaldo.jpg?fit=564%2C846&ssl=1" alt="Player 1"> <!-- Replace with actual image -->
+                <h3>Player 1</h3>
+                <p>Position: Forward</p>
+            </div>
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/%C3%81ngel_Di_Mar%C3%ADa_2017.jpg" alt="Player 2"> <!-- Replace with actual image -->
+                <h3>Player 2</h3>
+                <p>Position: Midfielder</p>
+            </div>
+            <div class="card">
+                <img src="https://th.bing.com/th/id/OIP.xTkbTxd9BVK5e54VFW2ZWwAAAA?rs=1&pid=ImgDetMain" alt="Player 3"> <!-- Replace with actual image -->
+                <h3>Player 3</h3>
+                <p>Position: Defender</p>
+            </div>
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/M/MV5BODkwZThiMjItNGM3ZC00YzZiLThiNTMtNmY4NzI2M2NkMGZjXkEyXkFqcGdeQXVyMjUyNDk2ODc@._V1_FMjpg_UX1000_.jpg" alt="Player 4"> <!-- Replace with actual image -->
+                <h3>Player 4</h3>
+                <p>Position: Goalkeeper</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Football Fan Page © 2024</p>
+    </div>
+  
+</div>
+<div class="content">
+    <h2>Top Football Players</h2>
+    <div class="grid-container" id="cardContainer">
+        <div class="card">
+            <img src="https://i0.wp.com/www.hairstyle.org.in/wp-content/uploads/2017/04/Hairstyles-By-Cristiano-Ronaldo.jpg?fit=564%2C846&ssl=1" alt="Cristiano Ronaldo">
+            <h3>Cristiano Ronaldo</h3>
+            <p>Position: Forward</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/%C3%81ngel_Di_Mar%C3%ADa_2017.jpg" alt="Ángel Di María">
+            <h3>Ángel Di María</h3>
+            <p>Position: Midfielder</p>
+        </div>
+        <div class="card">
+            <img src="https://th.bing.com/th/id/OIP.xTkbTxd9BVK5e54VFW2ZWwAAAA?rs=1&pid=ImgDetMain" alt="Sergio Ramos">
+            <h3>Sergio Ramos</h3>
+            <p>Position: Defender</p>
+        </div>
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/M/MV5BODkwZThiMjItNGM3ZC00YzZiLThiNTMtNmY4NzI2M2NkMGZjXkEyXkFqcGdeQXVyMjUyNDk2ODc@._V1_FMjpg_UX1000_.jpg" alt="Gianluigi Buffon">
+            <h3>Gianluigi Buffon</h3>
+            <p>Position: Goalkeeper</p>
+        </div>
+    </div>
+</div>
+<script>
+    // Function to shuffle the cards
+    function shuffleCards() {
+        const container = document.getElementById('cardContainer');
+        const cards = Array.from(container.getElementsByClassName('card'));
+        
+        // Fisher-Yates Shuffle Algorithm
+        for (let i = cards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [cards[i], cards[j]] = [cards[j], cards[i]];
+        }
+
+        // Clear the container and append shuffled cards
+        container.innerHTML = '';
+        cards.forEach(card => container.appendChild(card));
+    }
+
+    // Shuffle cards when the page loads
+    window.onload = shuffleCards;
+</script>
+
+
+</body>
+
+</html>
